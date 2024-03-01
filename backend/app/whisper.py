@@ -46,7 +46,7 @@ def parse_prescription():
             model="gpt-4",
             messages=[{
                 "role": "user",
-                "content": f"Given this prescription text: '{transcription_text}', parse it into the following fields: medicine Name, route, frequency, direction, duration, dose unit, and instruction. Discard any irrelevant information from the text. If medicines are more than 1, make separate prescriptions for each."
+                "content": f"Given this prescription text: '{transcription_text}', parse it into the following sections: 1. for medicine-> medicine Name, route, frequency, direction, duration, dose unit, and instruction. If medicines are more than 1, make separate prescriptions for each. 2. Disgnosis. 3. Lab Tests. 4. Doctor's Advice. Discard any irrelevant information from the text and in the response"
             }],
             stream=True,
         )
